@@ -1,16 +1,19 @@
 import * as index from '../src/index';
 
-type NumberToNumber = [numIn: number, numOut: number];
+type StringToNumber = [arg: string, expected: number];
 
-const testData: NumberToNumber[] = [
-    [0, 1],
+const testData: StringToNumber[] = [
+    ['1abc2', 12],
+    ['pqr3stu8vwx', 38],
+    ['a1b2c3d4e5f', 15],
+    ['treb7uchet', 77],
 ];
 
-describe('add one', () => {
-    test.each<NumberToNumber>(testData)(
-        'add one',
-        (numberIn, numberOut) => {
-            expect(index.addOne(numberIn)).toBe(numberOut);
+describe('construct number', () => {
+    test.each<StringToNumber>(testData)(
+        'construct number',
+        (arg, expected) => {
+            expect(index.constructNumber(arg)).toBe(expected);
         }
     );
 });
