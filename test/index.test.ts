@@ -35,7 +35,7 @@ const invalidWordArrays: StringArray[] = [
 describe('problem 1 part 1', () => {
     test('sum words from file', () => {
         const filePath = './test/resources/calibrationValues';
-        expect(index.problem1part1(filePath)).toBe(142);
+        expect(index.readCalibrationValues(filePath)).toBe(142);
     });
 });
 

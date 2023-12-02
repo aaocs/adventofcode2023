@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 
-export function problem1part1(path: string): number {
+export function readCalibrationValues(path: string): number {
     const data = fs.readFileSync(path, 'utf8');
     return sumWords(data.split('\n'));
 }
@@ -27,3 +27,10 @@ function getFirstNumChar(chars: string[]): string {
 export function sumWords(words: string[]): number {
     return words.reduce((aggregate, current) => aggregate + constructNumber(current), 0);
 }
+
+function problem1part1(): void {
+    const answer: number = readCalibrationValues('./src/resources/calibrationValues');
+    console.log(answer);
+}
+
+problem1part1();
