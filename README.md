@@ -1,6 +1,14 @@
 # adventofcode2023
 
-## Running tests
+## Solving the problems
+
+Run the following command to get answers to the problems:
+
+```shell
+npm run start
+```
+
+## Running the tests
 
 Before the first test run, run the following:
 

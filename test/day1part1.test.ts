@@ -1,4 +1,4 @@
-import * as index from '../src/index';
+import * as index from '../src/day1part1';
 
 type StringToNumber = [arg: string, expected: number];
 type StringArrayToNumber = [arg: string[], expected: number];
