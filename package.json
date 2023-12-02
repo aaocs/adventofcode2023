@@ -4,8 +4,10 @@
   "main": "build/index.js",
   "scripts": {
     "compile": "npx tsc",
-    "test": "jest",
-    "lint": "npx eslint . --ext .ts"
+    "lint": "npx eslint . --ext .ts",
+    "prestart": "npm run compile",
+    "start": "node build/index.js",
+    "test": "jest"
   },
   "license": "ISC",
   "dependencies": {
