@@ -1,3 +1,29 @@
+import * as fs from 'fs';
+
+export function problem1part1(path: string): number {
+    const data = fs.readFileSync(path, 'utf8');
+    return sumWords(data.split('\n'));
+}
+
 export function constructNumber(word: string): number {
-    return 0;
+    const chars: string[] = word.split('');
+
+    const firstNumChar = getFirstNumChar(chars);
+    const lastNumChar = getFirstNumChar(chars.reverse());
+
+    return parseInt(firstNumChar + lastNumChar);
+}
+
+function getFirstNumChar(chars: string[]): string {
+    for (const char of chars) {
+        if (!isNaN(parseInt(char))) {
+            return char;
+        }
+    }
+
+    throw new Error(`no numbers in word: ${chars.join('')}`);
+}
+
+export function sumWords(words: string[]): number {
+    return words.reduce((aggregate, current) => aggregate + constructNumber(current), 0);
 }
